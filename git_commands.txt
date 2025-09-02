@@ -1,0 +1,5 @@
+git init
+git add
+git commit -m "v1"
+git push -u *link master
+git pull *link master
