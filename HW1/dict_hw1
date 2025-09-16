@@ -1,0 +1,36 @@
+num_dict = {}
+
+Row = int(input("Enter Row: "))
+Col = int(input("Enter Col: "))
+
+#Dictionary Input
+for x in range(Row):
+    print(f"\nRow {x+1}")
+
+    for y in range(Col):
+        num = float(input(f"Enter number {y+1}: "))
+        num_dict[(x, y)] = num
+
+
+#Search Input
+searchNum = float(input("\nSearch number: "))
+
+
+#Dictionary Output
+print("\nThe numbers are:")
+for x in range(Row):              
+    for y in range(Col):      
+        print(num_dict[(x, y)], end=' ')
+    print()  
+
+
+#Search Output
+foundAt = []
+print(f"Number {searchNum} found at",end=' ')
+for i in range(Row):
+    for j in range(Col):
+        if searchNum == num_dict[(i, j)]:
+            foundAt.append(f"Row {x}, Col {y}")
+            
+final = " and ".join(foundAt)
+print(final)

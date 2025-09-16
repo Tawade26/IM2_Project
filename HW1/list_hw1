@@ -1,0 +1,44 @@
+nestedList = []
+
+Row = int(input("Enter Row: "))
+Col = int(input("Enter Col: "))
+
+#List Input
+for x in range(Row):
+    print(f"\nRow {x+1}:")
+    innerList = []
+    
+    for y in range(Col):
+        num = float(input(f"Enter number {y+1}: "))
+        innerList.append(num) 
+    
+    nestedList.append(innerList)
+
+
+#Search Input
+searchNum = float(input("\nSearch: "))
+
+
+#List Output
+print("\nThe numbers are:")
+for x in range(len(nestedList)):
+    for y in range(len(nestedList[x])):
+        print(nestedList[x][y], end=" ")
+    print()
+
+
+#Search Output
+foundAt = []
+for x in range(len(nestedList)):
+    for y in range(len(nestedList[x])):
+        if nestedList[x][y] == searchNum:
+            foundAt.append(f"Row {x}, Col {y}")
+            
+
+message = f"Number {searchNum} found at "
+for x in range(len(foundAt)):
+    message += foundAt[x]
+    if x+1 < len(foundAt):
+        message += " and "
+
+print(message)
