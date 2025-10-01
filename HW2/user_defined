@@ -1,0 +1,25 @@
+def string_frequency(string_input):
+
+    words = []
+    for i in range(len(string_input)):
+        new = list(string_input[i].strip())
+        words.append(new)
+    
+    
+    for i in range(len(words)):
+        letters = {}
+
+        for j in range(len(words[i])):
+            letter = words[i][j].lower()
+            if words[i][j] not in letters:
+                letters[letter] = 1
+            else:
+                letters[letter] += 1
+        
+        for key, value in letters.items():
+            print(f"{key}={value},", end=" ")
+        print()
+
+
+string = input("Enter string: ").strip()
+string_frequency(string.split(","))
